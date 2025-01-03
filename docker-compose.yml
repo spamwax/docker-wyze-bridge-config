@@ -1,0 +1,27 @@
+services:
+  wyze-bridge:
+    container_name: wyze-bridge
+    restart: unless-stopped
+    image: mrlt8/wyze-bridge:latest
+    ports:
+      - 1935:1935 # RTMP
+      - 8554:8554 # RTSP
+      - 8888:8888 # HLS
+      - 8889:8889 #WebRTC
+      - 8189:8189/udp # WebRTC/ICE
+      - 5001:5000 # WEB-UI. Note on macOS, port 5000 is used by ControlCenter so we have to change it the first one from 5000 to 5001
+    environment:
+      # [OPTIONAL] Credentials can be set in the WebUI
+      # API Key and ID can be obtained from the wyze dev portal:
+      # https://developer-api-console.wyze.com/#/apikey/view
+      - WYZE_EMAIL=${WYZE_EMAIL}
+      - WYZE_PASSWORD=${WYZE_PASSWORD}
+      - API_ID=${API_ID}
+      - API_KEY=${API_KEY}
+      # [OPTIONAL] IP Address of the host to enable WebRTC e.g.,:
+      - WB_IP=${WB_IP}
+      # WebUI and Stream authentication:
+      - WB_AUTH=True # Set to false to disable web and stream auth.
+      - STREAM_AUTH=:@${CAMERA_NAME}|::${KLIPPER_IP}
+      - WB_USERNAME=${WB_USERNAME}
+      - WB_PASSWORD=${WB_PASSWORD}
