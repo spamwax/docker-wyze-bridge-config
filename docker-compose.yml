@@ -22,6 +22,7 @@ services:
       - WB_IP=${WB_IP}
       # WebUI and Stream authentication:
       - WB_AUTH=True # Set to false to disable web and stream auth.
-      - STREAM_AUTH=:@${CAMERA_NAME}|::${KLIPPER_IP}
+      - STREAM_AUTH=:@${CAMERA_NAME}|::${KLIPPER_IP}@${CAMERA_NAME}
+      # - STREAM_AUTH=:@wyzecamv3
       - WB_USERNAME=${WB_USERNAME}
       - WB_PASSWORD=${WB_PASSWORD}
