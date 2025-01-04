@@ -55,7 +55,7 @@ Using mainsil's web UI, create a new web cam using the following settings:
 
 - Name: Wyze Cam
 - URL Stream: http://`WB_IP`:8889/`camera_name`/ 
-- URL Snapshot: http://`WB_IP`:5001/thumb/`camera_name`.jpg
+- URL Snapshot: http://`WB_IP`:5001/snapshot/`camera_name`.jpg
 - Service: WebRTC (MediaMTX)
 
 Change the `camera_name` to the actual camera name from your Wyze account.
