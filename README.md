@@ -59,5 +59,6 @@ Using mainsil's web UI, create a new web cam using the following settings:
 - Service: WebRTC (MediaMTX)
 
 Change the `camera_name` to the actual camera name from your Wyze account.
+**Security Note**: Beaware that using the above snapshot URL will 'leak' both the `WB_USERNAME` and `WB_PASSWORD` to moonraker's logs. 
 
 You can also access the Web-UI through `http://WB_IP:5001`
