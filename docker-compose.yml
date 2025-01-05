@@ -11,6 +11,8 @@ services:
       - 8189:8189/udp # WebRTC/ICE
       - 5001:5000 # WEB-UI. Note on macOS, port 5000 is used by ControlCenter so we have to change it the first one from 5000 to 5001
     environment:
+      - NET_MODE=LAN
+      - ON_DEMAND=False
       # [OPTIONAL] Credentials can be set in the WebUI
       # API Key and ID can be obtained from the wyze dev portal:
       # https://developer-api-console.wyze.com/#/apikey/view
