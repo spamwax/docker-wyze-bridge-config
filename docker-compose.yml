@@ -1,3 +1,4 @@
+version: "3"
 services:
   wyze-bridge:
     container_name: wyze-bridge
